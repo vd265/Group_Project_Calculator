@@ -1,0 +1,7 @@
+language: generic
+service:
+  - docker
+before_install:
+  docker build -t tommywenjiezhang/group-calculator .
+script:
+  docker run tommywenjiezhang/group-calculator
