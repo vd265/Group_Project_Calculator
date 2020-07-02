@@ -34,14 +34,18 @@ class TestDescriptiveStatistics(unittest.TestCase):
         result = self.statsCalculator.median([7,9,12,13,14,15])
         self.assertAlmostEqual(result,12.5,"tests median")
 
-    @unittest.skip
+
     def test_mode_value(self):
         result = self.statsCalculator.mode([10, 12, 23, 23, 16, 23, 21, 16])
         self.assertAlmostEqual(result,23,"Mode tests")
 
-    @unittest.skip
     def test_mean_Dev(self):
-        test_result =  [10, 12, 23, 23, 16, 23, 21, 16]
+        test_result =  self.statsCalculator.stdev([7,9,12,13,14,15])
+        self.assertAlmostEqual(test_result,2.808716591)
+
+    def test_z_score(self):
+        test_result = self.statsCalculator.z_score(11,[7,9,12,13,14,15])
+        self.assertAlmostEqual(test_result,-0.23735,places=2)
 
 if __name__ == '__main__':
     unittest.main()
