@@ -17,6 +17,10 @@ class TestDescriptiveStatistics(unittest.TestCase):
     def test_isinstanceOf_calculator(self):
         self.assertEqual(issubclass(StatsCalculator,Calculator),True,"Stats Calculator is not subclass of Calculator")
 
+    def test_string_input(self):
+        with self.assertRaises(ValueError):
+            result = self.statsCalculator.mean(["hello","",""])
+
     def test_mean(self):
         result = self.statsCalculator.mean((1,2,3))
         self.assertAlmostEqual(result,2)

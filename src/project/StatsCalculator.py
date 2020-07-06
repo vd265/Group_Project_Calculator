@@ -1,36 +1,31 @@
 from src.project.Calculator import Calculator
-from src.project.sanitization import Sanitization
+from src.project.helper import Helper
 import statistics
 
 class StatsCalculator(Calculator):
+
+    @Helper.validateListInput
     def mean(self,lst):
-        if any([type(num) not in (int,float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return statistics.mean(lst)
 
+    @Helper.validateListInput
     def median(self,lst):
-        if any([type(num) not in (int, float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return statistics.median(lst)
 
+    @Helper.validateListInput
     def mode(self,lst):
-        if any([type(num) not in (int, float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return statistics.mode(lst)
 
+    @Helper.validateListInput
     def stdev(self,lst):
-        if any([type(num) not in (int, float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return statistics.pstdev(lst)
 
-
+    @Helper.validateListInput
     def variance(self,lst):
-        if any([type(num) not in (int, float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return statistics.variance(lst)
+
+    @Helper.validateListInput
     def z_score(self, x, lst):
-        if any([type(num) not in (int, float) for num in lst]):
-            raise ValueError("Number in the list not int or float")
         return (x - self.mean(lst))/self.stdev(lst)
 
 
