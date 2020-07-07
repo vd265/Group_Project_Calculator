@@ -21,7 +21,7 @@ class Calculator:
             raise ValueError("Can't be divided by zero")
         return x/y
 
-    @Helper.validateNumberInput
+    @Helper.validateListInput
     def sumList(self,lst):
         result =0
         for x in range(0, len(lst)):

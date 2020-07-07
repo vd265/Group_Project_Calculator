@@ -23,23 +23,15 @@ class Helper():
     def validateListInput(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
-            counter = 0
-            wrongInput = False
-            wrongValueinList = False
-            for item in args:
-                if counter >= 1:
-                    if type(item) not in (list,tuple):
-                        print(type(item))
-                        wrongInput = True
-                        break
+            containListInput = any([type(item) in (list,tuple) for item in args[1:len(args)]])
+            for item in args[1:len(args)]:
+                if type(item) in (list,tuple):
                     if len(item) == 0:
                         raise ValueError("list cannot be empty")
-                    if type(item) in (list,tuple):
-                        if any([type(num) not in (int, float) for num in item]):
-                            raise ValueError("Number in the list not int or float")
-                counter += 1
-            if wrongInput:
-                raise ValueError("Input is not list")
+                    if any([type(num) not in (int, float) for num in item]):
+                        raise ValueError("Number in the list not int or float")
+            if not containListInput:
+                raise ValueError("Parameter does not have list input")
             else:
                 return func(*args, **kwargs)
         return wrapper
