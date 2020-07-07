@@ -7,5 +7,4 @@ before_install:
   docker build -t tommywenjiezhang/group-calculator .
 script:
   docker run --name groupcalculator tommywenjiezhang/group-calculator
-after_success:
-  - docker exec groupcalculator bash <(curl -s https://codecov.io/bash)
+  docker exec groupcalculator bash <(curl -s https://codecov.io/bash)

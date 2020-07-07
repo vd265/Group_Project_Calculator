@@ -6,4 +6,3 @@ COPY . .
 ENTRYPOINT [ "coverage", "run", "-m" ]
 CMD [ "unittest"]
 
-
