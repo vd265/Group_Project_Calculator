@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install python and pip
-RUN apk add --no-cache --update python3 py3-pip bash curl git -y
+RUN apk add --no-cache --update python3 py3-pip bash curl
 
 WORKDIR /usr/src/app
 COPY requirements.txt ./
