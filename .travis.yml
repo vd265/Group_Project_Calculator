@@ -5,8 +5,6 @@ service:
   - docker
 before_install:
   docker build -t tommywenjiezhang/group-calculator .
-install:
-  - pip install --user codecov
 script:
   docker run tommywenjiezhang/group-calculator
 after_success:
