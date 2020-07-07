@@ -42,5 +42,8 @@ class MyTestCase(unittest.TestCase):
         result = self.rc.selectRandomNListSeed([3, 8, 11, 17, 19, 8, 12, 13, 17, 20], 3,4)
         result2 = self.rc.selectRandomNListSeed([3, 8, 11, 17, 19, 8, 12, 13, 17, 20], 3,4)
         self.assertCountEqual(result,result2)
+
+
+
 if __name__ == '__main__':
     unittest.main()
