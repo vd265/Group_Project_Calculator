@@ -8,4 +8,4 @@ before_install:
 script:
   - ci_post_cov="bash <(curl -s https://codecov.io/bash) -t $token"
   - ci_env="bash <(curl -s https://codecov.io/env)"
-  - docker run tommywenjiezhang/group-calculator /bin/bash -c "$ci_env && coverage run -m unittest && $ci_post_cov"
+  - docker run tommywenjiezhang/group-calculator /bin/bash -c "coverage run -m unittest && $ci_env && $ci_post_cov"
