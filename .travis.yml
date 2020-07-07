@@ -1,9 +1,13 @@
-language: generic
+language: python
+python:
+    - "3.8"
 service:
   - docker
 before_install:
   docker build -t tommywenjiezhang/group-calculator .
+install:
+  - pip install --user codecov
 script:
   docker run tommywenjiezhang/group-calculator
 after_success:
-  bash <(curl -s https://codecov.io/bash)
+  - codecov
