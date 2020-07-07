@@ -16,22 +16,26 @@ random.seed(a=None,version=None)
 
 #Random Generator Functions
 
-#1 - Flawed
-# print(random.uniform(0,10))
+# 1 - Generate a random number without a seed between a range of two numbers - Both Integer and decimal
+print(random.randint(0,10))
 
-#2 - Works?
-# print(random.uniform(0,10))
+# 2 - Generate a random number with a seed between a range of two numbers - Both Integer and Decimal
+random.seed(2)
+print(random.randint())
 
-#3 - Works?
-# while len(datalist)<random.randint(0,10):
-# 	datalist.append(random.uniform(0,10))
-# print(datalist)
+# 3 - Generate a list of numbers with a seed and between a range of numbers - Both Integer and Decimal
+random.seed(1)
+while len(datalist)<random.randint(0,10):
+    datalist.append(random.uniform(0,10))
+    print(datalist)
 
-#4 - Works
-# print(random.choice(data))
+# 4 - Select a random item from a list
+print(random.choice(data))
 
-#5 - Skipped
+# 5 - Set a seed and randomly select the same value from a list
+random.seed(5)
 
+print(random)
 
 #6 - Works?
 # count=0
