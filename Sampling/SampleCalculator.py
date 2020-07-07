@@ -5,7 +5,13 @@ datalist=[]
 random.seed(a=None,version=None)
 #Population Sampling Functions
 
-#1 - Works
-# print(random.sample(data,,random.randint(1,10)))
+# 1 - Simple Random Sampling
+print(random.sample(data,random.randint(1,10)))
 
-#2
+# 2 - Confidence Interval for a sample
+
+# 3 - Margin of Error
+
+# 4 - Cochran's Sample Size Formula
+
+#5 - How to find a Sample Size given a confidence interval and width
