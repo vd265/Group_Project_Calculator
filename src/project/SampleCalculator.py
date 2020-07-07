@@ -9,6 +9,10 @@ class SampleCalculator(StatsCalculator):
     def cohran(self,zScore, p, e):
         return math.ceil((self.square(zScore) * p *(1-p))/self.square(1-e))
 
+    def smapleSize(self,W, cL, p):
+        # with unknown standard devation
+        pass
+
     @Helper.validateNumberInput
     def marginOfError(self,std,size,z):
         # implement a margin of error function here

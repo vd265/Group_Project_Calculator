@@ -32,6 +32,8 @@ class Helper():
                         print(type(item))
                         wrongInput = True
                         break
+                    if len(item) == 0:
+                        raise ValueError("list cannot be empty")
                     if type(item) in (list,tuple):
                         if any([type(num) not in (int, float) for num in item]):
                             raise ValueError("Number in the list not int or float")

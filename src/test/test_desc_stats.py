@@ -28,6 +28,10 @@ class TestDescriptiveStatistics(unittest.TestCase):
     def test_mean_invalid_input(self):
         with self.assertRaises(ValueError):
             result = self.statsCalculator.mean(['1','2'])
+    def test_mean_not_empty_list(self):
+        with self.assertRaises(ValueError):
+            result = self.statsCalculator.mean([])
+
 
     def test_mean_invalid_input(self):
         with self.assertRaises(ValueError):
