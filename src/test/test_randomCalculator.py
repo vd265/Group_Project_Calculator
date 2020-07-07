@@ -17,7 +17,7 @@ class MyTestCase(unittest.TestCase):
     def test_generateRandomNumber(self):
         result = self.rc.generateRandomNumber(10,20)
         print(f"result: {result}")
-        self.assertEqual(result >10 and result< 20, True)
+        self.assertEqual(result >=10 and result<= 20, True)
 
     def test_generateRandomSeedNumber(self):
         result = self.rc.generateRandomSeedNumber(10,10,20)
